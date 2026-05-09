@@ -1,20 +1,18 @@
-# Base image
-FROM node:20-alpine
+FROM node:18-slim
 
-# Set working directory
+# Ishchi katalogni yaratish
 WORKDIR /app
 
-# Copy package files
+# Bog'liqliklarni o'rnatish
 COPY package*.json ./
-
-# Install dependencies (production only)
 RUN npm install --production
 
-# Copy source code
+# Loyiha kodini nusxalash
 COPY . .
 
-# Expose backend port
-EXPOSE 3000
+# Hugging Face Spaces porti (majburiy 7860)
+ENV PORT=7860
+EXPOSE 7860
 
-# Start command
-CMD ["npm", "start"]
+# Dasturni ishga tushirish
+CMD ["node", "src/app.js"]
