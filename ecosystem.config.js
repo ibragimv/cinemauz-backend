@@ -3,8 +3,8 @@ module.exports = {
     {
       name: 'cinema-backend',
       script: 'src/app.js',
-      instances: 'max',        // CPU core soni bo'yicha
-      exec_mode: 'cluster',    // Cluster mode — 10K request
+      instances: 1,           // Telegram User client uchun faqat 1 ta instansiya kerak
+      exec_mode: 'fork',      // Cluster mode Telegram bilan AUTH_KEY_DUPLICATED xatosini beradi
       watch: false,
       max_memory_restart: '500M',
       env: {
