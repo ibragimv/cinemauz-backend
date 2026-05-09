@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+.env
+.git
+.gitignore
+frontend
+README.md
+Dockerfile
+.dockerignore
+users.json
+movies_cache.json
+translations.json

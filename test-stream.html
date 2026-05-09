@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Stream Test</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    h1 { margin-bottom: 20px; color: #e50914; }
+    video {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 10px;
+      background: #000;
+      box-shadow: 0 0 40px rgba(229,9,20,0.3);
+    }
+    .info {
+      margin-top: 15px;
+      color: #aaa;
+      font-size: 14px;
+    }
+    .info span { color: #e50914; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>🎬 Stream Test</h1>
+  <video controls autoplay>
+    <source src="http://localhost:3000/stream/34" type="video/mp4">
+    Brauzeringiz video'ni qo'llab-quvvatlamaydi.
+  </video>
+  <p class="info">
+    Fayl hajmi: <span>4.16 GB</span> |
+    Movie ID: <span>34</span> |
+    Stream URL: <span>http://localhost:3000/stream/34</span>
+  </p>
+</body>
+</html>
