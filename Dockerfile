@@ -1,18 +1,21 @@
 FROM node:18-slim
 
-# Ishchi katalogni yaratish
+# Hugging Face uchun maxsus foydalanuvchi yaratish
+RUN useradd -m -u 1000 user
+USER user
+ENV HOME=/home/user \
+    PATH=/home/user/.local/bin:$PATH
+
 WORKDIR /app
 
-# Bog'liqliklarni o'rnatish
-COPY package*.json ./
+# Fayllarni nusxalash va huquqlarni berish
+COPY --chown=user package*.json ./
 RUN npm install --production
 
-# Loyiha kodini nusxalash
-COPY . .
+COPY --chown=user . .
 
-# Hugging Face Spaces porti (majburiy 7860)
+# Port sozlamalari
 ENV PORT=7860
 EXPOSE 7860
 
-# Dasturni ishga tushirish
 CMD ["node", "src/app.js"]
