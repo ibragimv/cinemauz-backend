@@ -24,6 +24,7 @@ async function getClient() {
       if (!client.connected) {
         try {
           await client.connect();
+          console.log('✅ GramJS qayta ulandi');
         } catch (err) {
           if (err.errorMessage === 'AUTH_KEY_DUPLICATED') {
             console.warn('⚠️ AUTH_KEY_DUPLICATED: Boshqa instansiya ishlayotgan bo\'lishi mumkin. 5 soniya kutilmoqda...');
@@ -33,7 +34,6 @@ async function getClient() {
             throw err;
           }
         }
-        console.log('✅ GramJS ulandi');
       }
       return client;
     } catch (error) {
